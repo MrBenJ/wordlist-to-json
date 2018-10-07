@@ -6,7 +6,7 @@ const args = require('minimist')(process.argv.slice(2));
 console.log(args);
 const { help, file, value, space = 0 } = args;
 
-if (help) {
+if (help || !file) {
   console.log(
     chalk.white.bold('wordlist-to-json'),
     chalk.cyan('Created with <3 by'),
