@@ -1,6 +1,8 @@
 wordlist-to-json
 ================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/MrBenJ/wordlist-to-json.svg)](https://greenkeeper.io/)
+
 ## Convert wordlists to JSON format
 
 Quickly convert a list of words to a JSON object or JSON array quickly with the command line, or in a JS script.
