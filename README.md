@@ -3,14 +3,13 @@ wordlist-to-json
 
 ## Convert wordlists to JSON format
 
-Quickly convert a list of words to a JSON object or JSON array quickly with the command line.
-
+Quickly convert a list of words to a JSON object or JSON array quickly with the command line, or in a JS script.
 
 ## System Requirements
 
 * Node v8 or higher
 * npm v5 or higher
-* A burning desire to turn a wordlist into a JSON object or JSON array
+* An internal burning need to turn a wordlist into a JSON object or JSON array
 
 ## Installation
 
@@ -22,8 +21,6 @@ Installing this module allows you to use this tool as a CLI tool:
 ```sh
 $ wordlist-to-json --file "path/to/wordlist.txt"
 ```
-
-
 
 ## Usage
 
