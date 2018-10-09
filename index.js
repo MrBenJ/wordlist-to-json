@@ -2,8 +2,13 @@ const path = require('path');
 const fs = require('fs');
 
 const WordlistToJSON = (filePath, { value } = {}) => {
-  return new Promise( resolve => {
+  return new Promise( (resolve, reject) => {
     const list = fs.readFile(filePath, (error, buffer) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+
       const array = buffer.toString().split('\n');
 
       // If the --value flag is present, create a JSONObject
@@ -26,7 +31,6 @@ const WordlistToJSON = (filePath, { value } = {}) => {
         array.pop();
       }
       resolve(array);
-
     });
   });
 }

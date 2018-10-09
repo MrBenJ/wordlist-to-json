@@ -43,3 +43,11 @@ test('Should not include empty array values for extra newlines', async t => {
 
   t.truthy(arr[arr.length - 1]);
 });
+
+test('Should throw an error if bad values are passed in', async t => {
+  try {
+    await WordlistToJSON('bad-stuff-here :(');
+  } catch (error) {
+    t.truthy(error);
+  }
+});
