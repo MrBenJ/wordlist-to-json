@@ -14,14 +14,11 @@ if (help || !file) {
   return;
 }
 
-const pathToFile = path.resolve(process.cwd(), file);
-const fileName = path.basename(pathToFile).split('.').slice(0, -1).join('.');
-
-WordlistToJSON(pathToFile, { value }).then( output => {
+const fileName = path.resolve(process.cwd(), file);
+WordlistToJSON(fileName, { value }).then( output => {
   fs.writeFileSync(
-    path.resolve(process.cwd(), `${fileName}.json`),
+    path.resolve(process.cwd(), `./${file.split('.')[0]}.json`),
     JSON.stringify(output, undefined, +space)
   );
-})
-.then(() => Utils.log('File has been written to:', chalk.cyan.bold(`${fileName}.json`)))
-.catch(error => console.error(error.message));
+  Utils.log('File written!', chalk.cyan.bold(`./${file.split('.')[0]}.json`));
+});
