@@ -1,6 +1,6 @@
 {
   "name": "wordlist-to-json",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A small JS script to turn a wordlist into a JSON file",
   "repository": "https://github.com/MrBenJ/wordlist-to-json",
   "main": "index.js",
