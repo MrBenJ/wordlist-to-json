@@ -15,10 +15,13 @@ if (help || !file) {
 }
 
 const fileName = path.resolve(process.cwd(), file);
+
 WordlistToJSON(fileName, { value }).then( output => {
+  const outputFileName = Utils.formatFileName(fileName);
+
   fs.writeFileSync(
-    path.resolve(process.cwd(), `./${file.split('.')[0]}.json`),
+    path.resolve(process.cwd(), `./${outputFileName}`),
     JSON.stringify(output, undefined, +space)
   );
-  Utils.log('File written!', chalk.cyan.bold(`./${file.split('.')[0]}.json`));
+  Utils.log('File written!', chalk.cyan.bold(`./${outputFileName}`));
 });

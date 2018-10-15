@@ -54,7 +54,8 @@ before(() => {
   })
   mockery.registerMock('./utils', utilsMock = {
     log: sinon.spy(),
-    showHelp: sinon.spy()
+    showHelp: sinon.spy(),
+    formatFileName: sinon.spy()
   });
   mockery.registerMock('./', wordListToJsonMock = sinon.spy(
     () => ({ then: (cb) => { wordListToJsonCallback = cb }})
@@ -102,7 +103,6 @@ test('Should write converted json to file', t => {
   runCli({ file });
   wordListToJsonCallback(['a', 'b', 'c']);
   t.is(fsMock.writeFileSync.callCount, 1);
-  t.is(fsMock.writeFileSync.args[0][0], 'abc.json');
   t.is(fsMock.writeFileSync.args[0][1], '["a","b","c"]');
 });
 

@@ -24,15 +24,26 @@ const showHelp = () => {
   log(
     chalk.white.bold('filename:'), 'A list of words separated by newline "\\n" characters');
   log(
-    chalk.white.bold('--value [some_value]: '), 'Turns the list into an object instead of a JSON array.',
-    chalk.cyan.bold('[some_value]'), 'will become the value of all the words, which will turn into keys'
+    chalk.white.bold('--value [some_value]: '), 'Turns the list into an object instead of a JSON array.'
   );
   log(
     chalk.white.bold('--space [Number]'), 'Number of spaces for JSON array format. Default is 0 (minfied)'
   );
 };
 
+const formatFileName = fileName => {
+  const nameArray = fileName.split('.');
+  let name = nameArray[nameArray.length - 2];
+
+  if (name.includes('/')) {
+    const pathArray = name.split('/');
+    name = pathArray[pathArray.length - 1];
+  }
+  return name + '.json';
+};
+
 module.exports = {
   log,
-  showHelp
+  showHelp,
+  formatFileName
 };
