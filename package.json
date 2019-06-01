@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "alex": "^7.0.0",
-    "ava": "^1.0.0-beta.8",
+    "ava": "^2.0.0",
     "mockery": "^2.1.0",
     "sinon": "^7.2.4"
   }
