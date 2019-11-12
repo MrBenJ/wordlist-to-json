@@ -23,7 +23,7 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
-    "alex": "^7.0.0",
+    "alex": "^8.0.1",
     "ava": "^1.0.0-beta.8",
     "mockery": "^2.1.0",
     "sinon": "^7.2.4"
